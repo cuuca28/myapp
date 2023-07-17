@@ -1,4 +1,5 @@
-
+import '../App.css'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
 
@@ -10,9 +11,9 @@ const Header = () => {
             
             <div className="header_container2">
                 <nav className="header_nav">
-                    <a className="header_link" href="#">Prodcutos</a>
-                    <a className="header_link" href="#">Combos</a>
-                    <a className="header_link" href="#">Contacto</a>
+                    <Link className="header_link" to="/">Inicio</Link>
+                    <Link className="header_link" to="/nosotros">Nosotros</Link>
+                    <Link className="header_link" to="/ncontacto">Contacto</Link>
                 </nav>
             </div>
         </header>

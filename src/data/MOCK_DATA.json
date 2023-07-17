@@ -4,27 +4,31 @@
         "nombre": "Blunt",
         "descripción": "El mejor sabor para quemar",
         "precio": 150,
-        "img": "../img/"
+        "img": "../img/",
+        "category": "Utensilios"
     },
     {
         "id": 2,
         "nombre": "Tierra",
         "descripción": "La tierra con el abono de ph justo",
         "precio": 450,
-        "img": "../img/"
+        "img": "../img/",
+        "category": "Cultivo"
     },
     {
         "id": 3,
         "nombre": "Hojillas",
         "descripción": "Hojillas con pegamiento de miel",
         "precio": 50,
-        "img": "../img/"
+        "img": "../img/",
+        "category": "Utensilios"
     },
     {
         "id": 4,
         "nombre": "Bóveda",
         "descripción": "Sobre bóveda ajusta la humedad perfecta",
         "precio": 250,
-        "img": "../img/"
+        "img": "../img/",
+        "category": "Calidad"
     }
 ]

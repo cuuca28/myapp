@@ -1,28 +1,25 @@
-import '../App.css'
-import ItemList from './ItemList'
+
 import { useState, useEffect } from 'react'
 import { pedirDatos } from '../helpers/pedirDatos'
 import { useParams } from 'react-router-dom'
+import ItemDetail from './ItemDetail'
 
 
-const ItemListContainer = () => {
+const ItemDetailContainer = () => {
 
-    const [productos, setProductos] = useState([])
+    const [item, setItem] = useState([])
     const [loading, setLoading]  = useState(true)
 
-    const { categoryId } = useParams()
-    console.log(categoryId)
+    const { itemId } = useParams()
+    console.log(item)
+    console.log(itemId)
 
     useEffect (() => {
         setLoading(true)
 
         pedirDatos()
             .then((res) => {
-                if (!categoryId) {
-                    setProductos(res)
-                } else {
-                    setProductos (res.filter((item) => item.category === categoryId) )
-                }    
+                setItem(res.find((prod) => prod.id === Number(itemId)))        
             })    
             .catch((err) => console.log(err))
             .finally (() => setLoading(false))
@@ -34,11 +31,11 @@ const ItemListContainer = () => {
             {
                 loading
                     ? <h2>Cargando...</h2>
-                    : <ItemList items={productos}/>
+                    : <ItemDetail {...item} />
             }
         </div>
     )
         
 } 
 
-export default ItemListContainer
+export default ItemDetailContainer
